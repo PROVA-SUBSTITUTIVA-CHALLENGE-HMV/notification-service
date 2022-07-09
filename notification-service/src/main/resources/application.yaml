@@ -1,0 +1,30 @@
+server:
+  port: 8093
+
+spring:
+  application:
+    name: notification
+  rabbitmq:
+    addresses: localhost:5672
+  mail:
+    default-encoding: UTF-8
+    host: smtp-mail.outlook.com
+    username: cursos.online.tech@outlook.com
+    password: Fiap@123
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
+
+rabbitmq:
+  exchanges:
+    internal: internal.exchange
+  queues:
+    notification-welcome-email: notification.welcome.email.queue
+  routing-keys:
+    internal-notification: internal.notification.routing-key
